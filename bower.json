@@ -1,0 +1,20 @@
+{
+  "name": "buerohaeberli",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Yacine Belarbi <yacbel@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/scuocere/bh_18",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

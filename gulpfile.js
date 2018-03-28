@@ -41,7 +41,7 @@ gulp.task('build-js', ['coffee2js'], function() {
 gulp.task('default', function(){
 
   browserSync.init({
-    proxy: 'http://localhost:8888',
+    proxy: 'http://buerohaeberli.local',
     open: false
   });
 
@@ -50,4 +50,3 @@ gulp.task('default', function(){
   gulp.watch(['craft/templates/**/*.html']).on('change', browserSync.reload);
 
 });
-
