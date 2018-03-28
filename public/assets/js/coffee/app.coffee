@@ -1,5 +1,5 @@
 myFunction = ->
-	boo = 'someting'
+	boo = 'heeeeel'
 	console.log boo
 
 myFunction()

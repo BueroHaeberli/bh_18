@@ -41,8 +41,10 @@ gulp.task('build-js', ['coffee2js'], function() {
 gulp.task('default', function(){
 
   browserSync.init({
-    proxy: 'http://buerohaeberli.local',
-    open: false
+    open: 'external',
+    host: 'buerohaeberli.local',
+    proxy: 'buerohaeberli.local',
+    port: 8080 // for work mamp
   });
 
   gulp.watch('public/assets/js/coffee/*.coffee', ['coffee2js','build-js']);
