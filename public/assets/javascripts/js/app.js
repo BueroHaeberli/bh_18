@@ -2,7 +2,7 @@ var myFunction;
 
 myFunction = function() {
   var boo;
-  boo = 'heeeeel';
+  boo = 'hell';
   return console.log(boo);
 };
 

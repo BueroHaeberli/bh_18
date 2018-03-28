@@ -24,6 +24,8 @@
     "gulp-sourcemaps": "^1.5.0",
     "gulp-uglify": "^2.0.1",
     "gulp-util": "^3.0.8",
+    "gulp-rev": "latest",
+    "gulp-revmanifest": "latest",
     "postcss-flexibility": "^1.1.1",
     "run-sequence": "^1.2.2"
   }

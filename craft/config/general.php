@@ -1,16 +1,14 @@
 <?php
 
 return array(
-  '*' => array(
-    'devMode' => false,
-    'generateTransformsBeforePageLoad' => true,
-    'enableCsrfProtection' => false,
-    'omitScriptNameInUrls' => true,
-    'limitAutoSlugsToAscii' => true,
-    'convertFilenamesToAscii' => true,
-    'allowAutoUpdates' => false,
-  ),
-
+	'*' => array(
+	    'generateTransformsBeforePageLoad' => true,
+	    'enableCsrfProtection' => false,
+	    'omitScriptNameInUrls' => true,
+	    'limitAutoSlugsToAscii' => true,
+	    'convertFilenamesToAscii' => true,
+	    'allowAutoUpdates' => false,
+	),
 
 	'buerohaeberli.local' => array(
 	    'devMode' => true,

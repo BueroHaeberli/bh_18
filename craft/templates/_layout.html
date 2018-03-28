@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<html lang="de-CH">
 <head>
-	<meta charset="utf-8" />
-	<title>{% block title %}{% endblock %}</title>
-	<link rel="home" href="{{ siteUrl }}" />
+	{% include '_includes/html_header' %}
 </head>
 
 <body>
 	{% block main %}{% endblock %}
+	<script src="{{ rev('bundle.js') }}"></script>
 </body>
 </html>
