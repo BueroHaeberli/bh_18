@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "gsap": "^1.20.4"
   }
 }

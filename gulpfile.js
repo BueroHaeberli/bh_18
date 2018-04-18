@@ -28,7 +28,7 @@ gulp.task('coffee2js', function() {
 
 gulp.task('build-js', ['coffee2js'], function() {
   //gulp.src(['public/assets/javascripts/vendor/jquery/*.js','public/assets/javascripts/vendor/*.js','public/assets/javascripts/app.js'])
-  gulp.src(['public/assets/javascripts/vendor/jquery/jquery.js',
+  gulp.src(['bower_components/jquery/dist/jquery.js',
     'public/assets/javascripts/vendor/*.js',
     'public/assets/javascripts/vendor/plugins/*.js',
     'public/assets/javascripts/js/app.js'])
