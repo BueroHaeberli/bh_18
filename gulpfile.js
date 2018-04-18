@@ -7,6 +7,8 @@ var gulp  = require('gulp'),
     coffee = require('gulp-coffee'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
+    rev = require('gulp-rev'),
+    revManifest = require('gulp-revmanifest'),    
     browserSync = require('browser-sync').create();
 
 gulp.task('build-css', function() {
@@ -15,8 +17,13 @@ gulp.task('build-css', function() {
     .pipe(autoprefixer({
       cascade: false
     }))
-    .pipe(cleancss())
-    .pipe(gulp.dest('public/assets/bundle'))
+    .pipe(rev())
+    .pipe(gulp.dest('public/assets/build'))    
+    .pipe(revManifest('public/assets/build/rev-manifest.json', {
+      base: process.cwd()+'/public/assets/build',
+      merge: true
+    }))    
+    .pipe(gulp.dest('public/assets/build'))
     .pipe(browserSync.reload({stream: true}));
 });
 
@@ -32,9 +39,15 @@ gulp.task('build-js', ['coffee2js'], function() {
     'public/assets/javascripts/vendor/*.js',
     'public/assets/javascripts/vendor/plugins/*.js',
     'public/assets/javascripts/js/app.js'])
-    .pipe(concat('main.js'))
+    .pipe(concat('bundle.js'))
     .pipe(gutil.env.type === 'prod' ? uglify() : gutil.noop())
-    .pipe(gulp.dest('public/assets/bundle/'))
+    .pipe(rev())
+    .pipe(gulp.dest('public/assets/build'))    
+    .pipe(revManifest('public/assets/build/rev-manifest.json', {
+      base: process.cwd()+'/public/assets/build',
+      merge: true
+    }))
+    .pipe(gulp.dest('public/assets/build'))            
     .pipe(browserSync.reload({stream: true}));
 });
 

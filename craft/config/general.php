@@ -1,33 +1,42 @@
 <?php
 
-/**
- * General Configuration
- *
- * All of your system's general configuration settings go in here.
- * You can see a list of the default settings in craft/app/etc/config/defaults/general.php
- */
-
 return array(
+	'*' => array(
+	    'generateTransformsBeforePageLoad' => true,
+	    'enableCsrfProtection' => false,
+	    'omitScriptNameInUrls' => true,
+	    'limitAutoSlugsToAscii' => true,
+	    'convertFilenamesToAscii' => true,
+	    'allowAutoUpdates' => false,
+	),
 
-	// Base site URL
-	'siteUrl' => null,
+	'buerohaeberli.local' => array(
+	    'devMode' => true,
+	    // 'cacheDuration' => 'PT1S',
+	    'allowAutoUpdates' => true,
 
-	// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
-	'environmentVariables' => array(),
+	    'environmentVariables' => array(
+			'basePath' => $_SERVER['DOCUMENT_ROOT'].'/user_assets/',
+			'baseUrl'  => 'http://buerohaeberli.local:8080/',
+	    ),
 
-	// Default Week Start Day (0 = Sunday, 1 = Monday...)
-	'defaultWeekStartDay' => 0,
+	    // 'siteUrl' => array(
+	    //   'de' => 'http://localhost:3000/',
+	    //   'en' => 'http://localhost:3000/en/',
+	    // ),
+	),
 
-	// Enable CSRF Protection (recommended, will be enabled by default in Craft 3)
-	'enableCsrfProtection' => true,
+	'client.ch' => array(
+		'cacheDuration' => '0',
+    	'devMode' => false,
 
-	// Whether "index.php" should be visible in URLs (true, false, "auto")
-	'omitScriptNameInUrls' => 'auto',
+	    'environmentVariables' => array(
+	     	'basePath' => $_SERVER['DOCUMENT_ROOT'].'/user_assets/',
+	    ),
 
-	// Control Panel trigger word
-	'cpTrigger' => 'admin',
-
-	// Dev Mode (see https://craftcms.com/support/dev-mode)
-	'devMode' => false,
-
+    	// 'siteUrl' => array(
+     	//		'de' => 'https://www.tribecraft.ch/',
+     	//		'en' => 'https://www.tribecraft.ch/en/',
+    	// )
+  	)
 );
